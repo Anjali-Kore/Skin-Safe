@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #495057; /* Dark background */
+            font-family: Arial, sans-serif; /* Custom font */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin-top: 20px; /* Space above the card */
+        }
+        .result-box {
+            background-color: #343a40; /* Darker background for the card */
+            padding: 20px; /* Padding inside the card */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            color: aliceblue; /* Text color */
+        }
+        .image-container {
+            margin-bottom: 20px; /* Space between the image and diagnosis */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;color: aliceblue;">Prediction Result</h2>
+        <div class="result-box">
+            <div class="image-container">
+                <h3>Uploaded Image:</h3>
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Uploaded Image" width="300">
+            </div>
+            <div>
+                <h3>Diagnosis:</h3>
+                <p>{{ diagnosis }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
